@@ -12,13 +12,11 @@ class Node<T> {
     public static <T> Node<T> reverseList(Node<T> head) {
       // todo
       Node<T> prev = null;
-      Node<T> curr = head;
-      Node<T> temp;
-      while(curr!=null){
-        temp = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = temp;
+      while(head!=null){
+        Node<T> temp = head.next;
+        head.next = prev;
+        prev = head;
+        head = temp;
       }
       return prev;
     }

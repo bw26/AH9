@@ -3,9 +3,7 @@ class ECSource {
     // todo
     T val = head.val;
     while (head != null) {
-      if (!val.equals(head.val)) {
-        return false;
-      }
+      if (!val.equals(head.val)) return false;
       head = head.next;
     }
     return true;

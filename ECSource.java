@@ -1,24 +1,51 @@
-class Node<T> {
-  T val;
-  Node<T> next;
-
-  public Node(T val) {
-    this.val = val;
-    this.next = null;
-  }
-}
-
 class ECSource {
   public static <T> boolean isUnivalueList(Node<T> head) {
     // todo
+    T val = head.val;
+    while (head != null) {
+      if (!val.equals(head.val)) {
+        return false;
+      }
+      head = head.next;
+    }
     return true;
   }
 
   public static void main(String[] args) {
-        Node<String> z = new Node<>("z");
-        // z
+    Node<String> z = new Node<>("z");
+    // z
 
-        // Printing solution
-        System.out.println((ECSource.isUnivalueList(z)));
-    }
+    // Printing solution
+    System.out.println((ECSource.isUnivalueList(z)));//true
+
+    Node<Integer> u = new Node<>(2);
+    Node<Integer> v = new Node<>(2);
+    Node<Integer> w = new Node<>(2);
+    Node<Integer> x = new Node<>(2);
+    Node<Integer> y = new Node<>(2);
+
+    u.next = v;
+    v.next = w;
+    w.next = x;
+    x.next = y;
+
+    // 2 -> 2 -> 2 -> 2 -> 2
+
+    System.out.println(ECSource.isUnivalueList(u)); // true
+
+    u = new Node<>(2);
+    v = new Node<>(2);
+    w = new Node<>(3);
+    x = new Node<>(3);
+    y = new Node<>(2);
+
+    u.next = v;
+    v.next = w;
+    w.next = x;
+    x.next = y;
+
+    // 2 -> 2 -> 3 -> 3 -> 2
+
+    System.out.println(ECSource.isUnivalueList(u)); // false
+  }
 }

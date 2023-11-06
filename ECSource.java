@@ -7,6 +7,12 @@ class ECSource {
       head = head.next;
     }
     return true;
+    
+    //Recursion
+    // if (head.next == null) return true;
+    // T val = head.val;
+    // if(val.equals(head.next.val)) return true && isUnivalueList(head.next);
+    // else return false;
   }
 
   public static void main(String[] args) {
